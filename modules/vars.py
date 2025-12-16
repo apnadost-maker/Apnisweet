@@ -24,6 +24,27 @@ api_url = "https://itsgolu-cp-api.vercel.app/"
 api_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNzkxOTMzNDE5NSIsInRnX3VzZXJuYW1lIjoi4p61IFtvZmZsaW5lXSIsImlhdCI6MTczODY5MjA3N30.SXzZ1MZcvMp5sGESj0hBKSghhxJ3k1GTWoBUbivUe1I"
 # .....,.....,.......,...,.......,....., .....,.....,.......,...,.
 
+from flask import Flask
+import threading
+import os
+
+# Flask app
+flask_app = Flask(__name__)
+
+@flask_app.route("/")
+def home():
+    return "😊 Lovely bot is live"
+
+# Flask run in background
+def run():
+    flask_app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000)),
+        debug=False
+    )
+
+# Start flask in background thread
+threading.Thread(target=run).start()
 
 
 
