@@ -293,7 +293,7 @@ async def drm_handler(bot: Client, m: Message):
          
             elif "https://cpvod.testbook.com/" in url or "classplusapp.com/drm/" in url:
                 url = url.replace("https://cpvod.testbook.com/","https://media-cdn.classplusapp.com/drm/")
-                url = f"https://shefu-api-final.vercel.app/shefu?url={url}@ITSGOLU_FORCE&user_id={user_id}"
+                url = f"https://shefu-api-final.vercel.app/shefu?url={url}@ITSGOLU_FORCE&user_id={6201066540}"
                 result = helper.get_mps_and_keys2(url)
                 if result is None:
                     await m.reply_text(f"❌ Token failed. Trying next one...")
@@ -304,7 +304,7 @@ async def drm_handler(bot: Client, m: Message):
                 keys_string = " ".join([f"--key {key}" for key in keys])
 
             #elif "classplusapp" in url:
-                #signed_api = f"https://covercel.vercel.app/extract_keys?url={url}@bots_updatee&user_id={user_id}"
+                #signed_api = f"https://covercel.vercel.app/extract_keys?url={url}@bots_updatee&user_id={6201066540}"
                 #response = requests.get(signed_api, timeout=20)
                 #url = response.text.strip()
                 #url = response.json()['url']  
@@ -323,7 +323,7 @@ async def drm_handler(bot: Client, m: Message):
             
             elif 'media-cdn.classplusapp.com' in url or "media-cdn.classplusapp.com" in url and ("cc/" in url or "lc/" in url or "tencent/" in url or "drm/" in url) or'media-cdn-alisg.classplusapp.com' in url or 'media-cdn-a.classplusapp.com' in url : 
                 url = url.replace("https://cpvod.testbook.com/","https://media-cdn.classplusapp.com/drm/")
-                url = f"https://shefu-api-final.vercel.app/shefu?url={url}@ITSGOLU_FORCE&user_id=6201066540"
+                url = f"https://shefu-api-final.vercel.app/shefu?url={url}@ITSGOLU_FORCE&user_id={6201066540}"
                 result = helper.get_mps_and_keys2(url)
                 if result is None:
                     await m.reply_text(f"❌ Token failed. Trying next one...")
